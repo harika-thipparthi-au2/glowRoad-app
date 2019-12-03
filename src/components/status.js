@@ -6,9 +6,18 @@ class Status extends Component {
         this.props.setPlayer(e)
     }
     renderHtml() {
-        if (this.props.winner) {
+        if(this.props.winner=="draw"){
+            return (<h4 className="my-4">Match {this.props.winner}</h4>)
+
+        } 
+    
+        else if (this.props.winner) {
             return (<h4 className="my-4">Winner is {this.props.winner}</h4>)
-        } else {
+
+        }
+         
+        
+        else {
             return this.props.player ?
                 <h4 className="my-4">Next player is {this.props.player}</h4> :
 

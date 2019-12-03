@@ -52,12 +52,26 @@ class Board extends React.Component {
                             : this.state.player1
                 });
                 hasWinner = true;
+                setTimeout(() => {
+                    this.setState({
+                      player: null,
+                      winner: null,
+                      board: Array(9).fill(null)
+                    });
+                  }, 2000);
             }
         }
         if (!hasWinner && this.isArrayFull(this.state.board)) {
             this.setState({
                 winner: "draw"
             });
+            setTimeout(() => {
+                this.setState({
+                  player: null,
+                  winner: null,
+                  board: Array(9).fill(null)
+                });
+              }, 2000);
         }
     }
 
@@ -75,14 +89,6 @@ class Board extends React.Component {
 
     setPlayer(player) {
         console.log(player);
-    }
-
-    reset() {
-        this.setState({
-            player: null,
-            winner: null,
-            board: Array(9).fill(null)
-        });
     }
 
     render() {
@@ -109,10 +115,10 @@ class Board extends React.Component {
                         <tr>
                             <td>
                                 Player1(O)
-                </td>
+                           </td>
                             <td>
                                 Player2(X)
-                </td>
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -127,10 +133,7 @@ class Board extends React.Component {
                     </table>
                 </div>
 
-                <button className="mt-2" disabled={!this.state.winner} onClick={() => this.reset()}>
-                    {" "}
-                    Reset
-        </button>
+                
             </div>
         );
     }
