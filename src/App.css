@@ -22,7 +22,6 @@ body{
   flex-wrap: wrap;
   width: 320px;
   line-height: 94px;
-  font-size: 32px;
   font-weight: bold;
 }
 
@@ -45,3 +44,10 @@ padding: 30px;
 #box:nth-child(3n) {
   border-right: 0;
 }
+
+table{
+width:20%;
+margin: auto;
+font-size:20px;
+}
+
